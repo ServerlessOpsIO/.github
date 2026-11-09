@@ -1,0 +1,18 @@
+name: Techdocs
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'specs/**'
+
+permissions: {}
+
+jobs:
+  techdocs:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello World!"
